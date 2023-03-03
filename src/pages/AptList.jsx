@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom" // manipular el URL del usuario
+import BounceLoader from "react-spinners/BounceLoader";
 
 // Este componente renderizará data de un backend
 function AptList() {
@@ -37,8 +38,13 @@ function AptList() {
 
   // clausula de guardia
   if (isFetching === true) {
-    return <h3>... buscando</h3>
+    // return <h3>... buscando</h3>
     // no hagas más despues de esta linea
+    return (
+      <div style={{display: "flex", justifyContent: "center", padding: "20px"}}>
+        <BounceLoader color="#ff0000" size={100}/>
+      </div>
+    )
   } 
 
   return (

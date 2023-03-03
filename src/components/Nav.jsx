@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 function Nav() {
 
   const checkActiveClass = (navInfo) => {
-    console.log(navInfo)
+    // console.log(navInfo)
     if (navInfo.isActive === true) {
       return "nav-active"
     } else {

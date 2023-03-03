@@ -1,18 +1,18 @@
 
-body {
+/* body {
   background-color: rgb(42, 42, 42);
-}
+} */
 
 .App {
   text-align: center;
-  color: white;
+  /* color: white; */
+  min-height: 100vh;
 }
 
 nav {
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  padding: 20px;
 }
 
 nav a {

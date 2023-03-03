@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Nav from './components/Nav';
@@ -10,13 +11,28 @@ import NotFound from './pages/NotFound';
 
 function App() {
 
+  const [ darkMode, setDarkMode ] = useState(true)
 
+  const darkTheme = {
+    backgroundColor: "rgb(42, 42, 42)",
+    color: "white",
+  }
+
+  const lightTheme = {
+    backgroundColor: "white",
+    color: "black"
+  }
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode)
+  }
 
   return (
-    <div className="App">
+    <div className="App" style={darkMode === true ? darkTheme : lightTheme}>
+
+      <button onClick={toggleDarkMode}>Click</button>
 
       <Nav />
-
 
       <Routes>
 
