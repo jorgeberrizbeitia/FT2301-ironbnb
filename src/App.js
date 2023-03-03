@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Nav from './components/Nav';
@@ -9,30 +9,19 @@ import Error from './pages/Error';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 
+import { ThemeContext } from './context/theme.context';
+
 function App() {
 
-  const [ darkMode, setDarkMode ] = useState(true)
-
-  const darkTheme = {
-    backgroundColor: "rgb(42, 42, 42)",
-    color: "white",
-  }
-
-  const lightTheme = {
-    backgroundColor: "white",
-    color: "black"
-  }
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-  }
+  const { toggleDarkMode, selectTheme, selectBtnTheme } = useContext(ThemeContext)
 
   return (
-    <div className="App" style={darkMode === true ? darkTheme : lightTheme}>
+    <div className="App" style={selectTheme}>
 
-      <button onClick={toggleDarkMode}>Click</button>
+      <button style={selectBtnTheme} onClick={toggleDarkMode}>Click</button>
 
       <Nav />
+      {/* <Nav toggleDarkMode={toggleDarkMode}/> */}
 
       <Routes>
 

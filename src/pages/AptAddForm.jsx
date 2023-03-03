@@ -1,9 +1,12 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
+import { ThemeContext } from "../context/theme.context"
+
 function AptAddForm() {
 
+  const { selectBtnTheme } = useContext(ThemeContext)
   const navigate = useNavigate()
 
   const [ title, setTitle ] = useState("")
@@ -67,7 +70,7 @@ function AptAddForm() {
 
         <br />
 
-        <button onClick={handleSubmitForm}>Agregar</button>
+        <button style={selectBtnTheme} onClick={handleSubmitForm}>Agregar</button>
 
 
       </form>

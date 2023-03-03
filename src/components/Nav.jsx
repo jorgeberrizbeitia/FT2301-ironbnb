@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 
 
-function Nav() {
+function Nav(props) {
 
   const checkActiveClass = (navInfo) => {
     // console.log(navInfo)
@@ -20,6 +20,7 @@ function Nav() {
       <NavLink className={checkActiveClass} to="/">Home</NavLink>
       <NavLink className={checkActiveClass} to="/pisos/list">Lista de Pisos</NavLink>
       <NavLink className={checkActiveClass} to="/pisos/add-form">Agregar Piso</NavLink>
+      {/* <button onClick={props.toggleDarkMode}>Click</button> */}
 
     </nav>
   )
